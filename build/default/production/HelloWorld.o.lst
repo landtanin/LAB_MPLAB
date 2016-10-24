@@ -1,4 +1,4 @@
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  1
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,43 +57,47 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00011 
 0000                  00012 Start:
                       00013 
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  2
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 0000   1683           00014      bsf       STATUS,RP0     ; select Register Bank 1
+                      00015 ;     bcf       TRISD,TRISD0   ; make IO Pin RD0 an output
+                      00016 ;     bcf       TRISD,TRISD2   ; make IO Pin RD2 an output
+0001   3000           00017      movlw  b'00000000'
 Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
-0001   1008           00015      bcf       TRISD,TRISD0   ; make IO Pin RD0 an output
-Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
-0002   1108           00016      bcf       TRISD,TRISD2   ; make IO Pin RD0 an output
-0003   1283           00017      bcf       STATUS,RP0     ; back to Register Bank 0
-0004   1408           00018      bsf       PORTD,RD0     ; turn on LED RD0
-0005   1508           00019      bsf       PORTD,RD2      ; turn on LED RD0
-                      00020      
-0006   2806           00021      goto      $                  ; Stop here...
-                      00022 ; IMPORTANT SIDE NOTE:
-                      00023 ; $ means the address of the present instruction that assembler knows
-                      00024 ;   as it places the instructions in the memory. This assembler variable
-                      00025 ;   can be used for some programming tricks that are not recommended to you.
-                      00026 ;   Here it was left to show how the program can be forced to indefinetely
-                      00027 ;   repeate the same goto. Despite the microcontroller is still running at
-                      00028 ;   the clock speed, it will neither respond to any input changes (e.g., on
-                      00029 ;   buttons that are pressed) nor change its outputs (e.g., connected to LEDs).
-                      00030 ;   You can see this variable in some examples on the internet - that was the
-                      00031 ;   reason not to change it here.
-                      00032 ;   Please better use the following instruction that I
-                      00033 ;   believe is much more understandable:
-                      00034 ;               Stop    goto    Stop
-                      00035 ;   (you can use any other label here if you wish - Finish etc)
-                      00036 ;   This instruction is useful for programs that run from start to finish like 
-                      00037 ;   most programs you used for introductory programming modules.
-                      00038 ; END OF NOTE
-                      00039 
-                      00040 ; required by the end of file, still generates a warning
-                      00041      end
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  3
+0002   0088           00018      movwf  TRISD   
+                      00019      
+0003   1283           00020      bcf       STATUS,RP0     ; back to Register Bank 0
+0004   30FF           00021      movlw   0xff
+0005   0088           00022      movwf  PORTD   
+                      00023 ;     bsf       PORTD,RD0     ; turn on LED RD0
+                      00024 ;     bsf       PORTD,RD2      ; turn on LED RD2
+                      00025      
+0006   2806           00026      goto      $                  ; Stop here...
+                      00027 ; IMPORTANT SIDE NOTE:
+                      00028 ; $ means the address of the present instruction that assembler knows
+                      00029 ;   as it places the instructions in the memory. This assembler variable
+                      00030 ;   can be used for some programming tricks that are not recommended to you.
+                      00031 ;   Here it was left to show how the program can be forced to indefinetely
+                      00032 ;   repeate the same goto. Despite the microcontroller is still running at
+                      00033 ;   the clock speed, it will neither respond to any input changes (e.g., on
+                      00034 ;   buttons that are pressed) nor change its outputs (e.g., connected to LEDs).
+                      00035 ;   You can see this variable in some examples on the internet - that was the
+                      00036 ;   reason not to change it here.
+                      00037 ;   Please better use the following instruction that I
+                      00038 ;   believe is much more understandable:
+                      00039 ;               Stop    goto    Stop
+                      00040 ;   (you can use any other label here if you wish - Finish etc)
+                      00041 ;   This instruction is useful for programs that run from start to finish like 
+                      00042 ;   most programs you used for introductory programming modules.
+                      00043 ; END OF NOTE
+                      00044 
+                      00045 ; required by the end of file, still generates a warning
+                      00046      end
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  3
 
 
 SYMBOL TABLE
@@ -152,7 +156,7 @@ BRG6                              00000006
 BRG7                              00000007
 BRG8                              00000000
 BRG9                              00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  4
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  4
 
 
 SYMBOL TABLE
@@ -211,7 +215,7 @@ CHS0                              00000002
 CHS1                              00000003
 CHS2                              00000004
 CHS3                              00000005
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  5
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  5
 
 
 SYMBOL TABLE
@@ -270,7 +274,7 @@ INTF                              00000001
 IOCB                              00000096
 IOCB0                             00000000
 IOCB1                             00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  6
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  6
 
 
 SYMBOL TABLE
@@ -329,7 +333,7 @@ PDC0                              00000000
 PDC1                              00000001
 PDC2                              00000002
 PDC3                              00000003
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  7
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  7
 
 
 SYMBOL TABLE
@@ -388,7 +392,7 @@ RC2                               00000002
 RC3                               00000003
 RC4                               00000004
 RC5                               00000005
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  8
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  8
 
 
 SYMBOL TABLE
@@ -447,7 +451,7 @@ SSPCON2                           00000091
 SSPEN                             00000005
 SSPIE                             00000003
 SSPIF                             00000003
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE  9
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  9
 
 
 SYMBOL TABLE
@@ -506,7 +510,7 @@ TOUTPS2                           00000005
 TOUTPS3                           00000006
 TRISA                             00000085
 TRISA0                            00000000
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE 10
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 10
 
 
 SYMBOL TABLE
@@ -565,7 +569,7 @@ TXEN                              00000005
 TXIE                              00000004
 TXIF                              00000004
 TXREG                             00000019
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE 11
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 11
 
 
 SYMBOL TABLE
@@ -624,7 +628,7 @@ _CONFIG1                          00002007
 _CONFIG2                          00002008
 _CPD_OFF                          00003FFF
 _CPD_ON                           00003F7F
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE 12
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 12
 
 
 SYMBOL TABLE
@@ -678,7 +682,7 @@ _WRT_HALF                         000039FF
 _WRT_OFF                          00003FFF
 _XT_OSC                           00003FF9
 __16F887                          00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:29:21         PAGE 13
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 13
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
@@ -695,6 +699,6 @@ Program Memory Words Free:  8185
 
 Errors   :     0
 Warnings :     0 reported,     0 suppressed
-Messages :     2 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
 
 
