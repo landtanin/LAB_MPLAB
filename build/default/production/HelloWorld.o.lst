@@ -1,4 +1,4 @@
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  1
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00011 
 0000                  00012 Start:
                       00013 
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  2
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -66,7 +66,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000   1683           00014      bsf       STATUS,RP0     ; select Register Bank 1
                       00015 ;     bcf       TRISD,TRISD0   ; make IO Pin RD0 an output
                       00016 ;     bcf       TRISD,TRISD2   ; make IO Pin RD2 an output
-0001   3000           00017      movlw  b'00000000'
+0001   3095           00017      movlw  b'10010101'
 Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
 0002   0088           00018      movwf  TRISD   
                       00019      
@@ -97,7 +97,7 @@ Message[302]: Register in operand not in bank 0.  Ensure that bank bits are corr
                       00044 
                       00045 ; required by the end of file, still generates a warning
                       00046      end
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  3
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  3
 
 
 SYMBOL TABLE
@@ -156,7 +156,7 @@ BRG6                              00000006
 BRG7                              00000007
 BRG8                              00000000
 BRG9                              00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  4
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  4
 
 
 SYMBOL TABLE
@@ -215,7 +215,7 @@ CHS0                              00000002
 CHS1                              00000003
 CHS2                              00000004
 CHS3                              00000005
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  5
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  5
 
 
 SYMBOL TABLE
@@ -274,7 +274,7 @@ INTF                              00000001
 IOCB                              00000096
 IOCB0                             00000000
 IOCB1                             00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  6
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  6
 
 
 SYMBOL TABLE
@@ -333,7 +333,7 @@ PDC0                              00000000
 PDC1                              00000001
 PDC2                              00000002
 PDC3                              00000003
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  7
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  7
 
 
 SYMBOL TABLE
@@ -392,7 +392,7 @@ RC2                               00000002
 RC3                               00000003
 RC4                               00000004
 RC5                               00000005
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  8
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  8
 
 
 SYMBOL TABLE
@@ -451,7 +451,7 @@ SSPCON2                           00000091
 SSPEN                             00000005
 SSPIE                             00000003
 SSPIF                             00000003
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE  9
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE  9
 
 
 SYMBOL TABLE
@@ -510,7 +510,7 @@ TOUTPS2                           00000005
 TOUTPS3                           00000006
 TRISA                             00000085
 TRISA0                            00000000
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 10
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE 10
 
 
 SYMBOL TABLE
@@ -569,7 +569,7 @@ TXEN                              00000005
 TXIE                              00000004
 TXIF                              00000004
 TXREG                             00000019
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 11
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE 11
 
 
 SYMBOL TABLE
@@ -628,7 +628,7 @@ _CONFIG1                          00002007
 _CONFIG2                          00002008
 _CPD_OFF                          00003FFF
 _CPD_ON                           00003F7F
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 12
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE 12
 
 
 SYMBOL TABLE
@@ -682,7 +682,7 @@ _WRT_HALF                         000039FF
 _WRT_OFF                          00003FFF
 _XT_OSC                           00003FF9
 __16F887                          00000001
-MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:46:38         PAGE 13
+MPASM 5.68  /USERS/MAC/DOCUMENTS/LAB_MPLAB_X   10-24-2016  12:49:47         PAGE 13
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)

@@ -14,7 +14,7 @@ Start:
      bsf       STATUS,RP0     ; select Register Bank 1
 ;     bcf       TRISD,TRISD0   ; make IO Pin RD0 an output
 ;     bcf       TRISD,TRISD2   ; make IO Pin RD2 an output
-     movlw  b'00000000'
+     movlw  b'10010101'
      movwf  TRISD   
      
      bcf       STATUS,RP0     ; back to Register Bank 0
