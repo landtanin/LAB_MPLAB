@@ -76,14 +76,14 @@ Display          ; define a variable to hold the diplay
      
 Start:
 
-;------------------------------------------------------------
+;--------------------choose between----------------------------------------
 ;* normal and exercise 1 initialisation
 ;     bsf       STATUS,RP0     ; select Register Bank 1
 ;     clrf      TRISD          ; make IO PortD all output
 ;     bcf       STATUS,RP0     ; back to Register Bank 0
-;     movlw     0x80
+;     movlw     0x01
 ;     movwf     Display		  ; switch on LD7 at the start
-     
+;     
  ;* exercise 2 initialisation
      bsf       STATUS,RP0     ; select Register Bank 1
      bcf       TRISD, TRISD0  ; make IO PortD all output
@@ -91,7 +91,7 @@ Start:
      bcf       TRISD, TRISD2  ; make IO PortD all output
      bcf       TRISD, TRISD3  ; make IO PortD all output
      bcf       STATUS,RP0     ; back to Register Bank 0
-     movlw     0x00
+     movlw     0x01
      movwf     Display		  ; switch on LD7 at the start
 
 ;------------------------;------------------------------------
@@ -116,7 +116,7 @@ OndelayLoop:
 ;     bcf       STATUS,C       ; ensure the carry bit is clear
 ;     rrf       Display,f
 ;     
-;; if it was the rightmost LED (LD0), switch on LD7
+;; if it was the LED (LD0), switch on LD7
 ;     btfsc     STATUS,C       ; Did the bit rotate into the carry?
 ;     bsf       Display,RD7    ; yes, put it into bit 7.
      
@@ -126,7 +126,7 @@ OndelayLoop:
 ;     bcf       STATUS,C       ; ensure the carry bit is clear
 ;     rlf       Display,f
 ;     
-;; if it was the leftmost LED (LD7), switch on LD0
+;; if it was the LED (LD7), switch on LD0
 ;     btfsc     STATUS,C       ; Did the bit rotate into the carry?
 ;     bsf       Display,RD0    ; yes, put it into bit 0.
 
@@ -137,10 +137,10 @@ OndelayLoop:
      rlf       Display,f
      
 ; if it was the leftmost LED (LD3), switch on LD0
-     btfsc     STATUS,C       ; Did the bit rotate into the carry?
+     btfsc     PORTD,RD3       ; Did the bit rotate into the carry?
      bsf       Display,RD0    ; yes, put it into bit 0.
 
-;-------------------------------------------------------------
+;------------------------end choosing-------------------------------------
      goto      MainLoop
 ;* end of the superloop
 ;------------------------------------------------------------
